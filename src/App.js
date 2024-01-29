@@ -13,6 +13,7 @@ const SearchBar = ({ onSerach }) => {
   return (
     <div className="search-bar">
       <input
+        type="text"
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
         placeholder="Enter city name"

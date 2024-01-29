@@ -4,28 +4,29 @@ import { useEffect, useState } from "react";
 
 const SearchBar = ({ onSerach }) => {
   const [searchValue, setSearchValue] = useState("");
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault()
     onSerach(searchValue);
 
     setSearchValue("");
   };
 
   return (
-    <div className="search-bar">
+    <form className="search-bar" onSubmit={handleSearch}>
       <input
         type="text"
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
         placeholder="Enter city name"
       />
-      <button onSubmit={handleSearch}>Search</button>
-    </div>
+      <button >Search</button>
+    </form>
   );
 };
 
 const WeatherCard = ({ title, value }) => {
   return (
-    <div className="weather-cards">
+    <div className="weather-card">
       <h3>{title}</h3>
       <p>{value}</p>
     </div>
@@ -57,10 +58,10 @@ const WeatherDisplay = ({ city }) => {
   }, [city]);
 
   return (
-    <div >
+    <div className="weather-display">
       {loading && <p>Loading data...</p>}
       {!loading && weather && (
-        <div className="weather-card">
+        <div className="weather-cards">
           
           <WeatherCard title="Temperature" value={`${weather.current.temp_c}°C`}/>
           <WeatherCard title="Humidity" value={`${weather.current.humidity}%`}/>

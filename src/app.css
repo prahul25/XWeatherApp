@@ -39,10 +39,15 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+.weather-cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 20px;
 }
 
-.weather-cards{
+.weather-card{
 
     background-color: #fff;
     border-radius: 8px;

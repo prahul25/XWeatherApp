@@ -18,7 +18,7 @@ const SearchBar = ({ onSerach }) => {
         onChange={(e) => setSearchValue(e.target.value)}
         placeholder="Enter city name"
       />
-      <button onClick={handleSearch}>Search</button>
+      <button onSubmit={handleSearch}>Search</button>
     </div>
   );
 };
@@ -60,7 +60,7 @@ const WeatherDisplay = ({ city }) => {
     <div >
       {loading && <p>Loading data...</p>}
       {!loading && weather && (
-        <div className="weather-display">
+        <div className="weather-card">
           
           <WeatherCard title="Temperature" value={`${weather.current.temp_c}°C`}/>
           <WeatherCard title="Humidity" value={`${weather.current.humidity}%`}/>

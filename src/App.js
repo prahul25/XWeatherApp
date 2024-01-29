@@ -25,7 +25,7 @@ const SearchBar = ({ onSerach }) => {
 
 const WeatherCard = ({ title, value }) => {
   return (
-    <div className="weather-card">
+    <div className="weather-cards">
       <h3>{title}</h3>
       <p>{value}</p>
     </div>
@@ -58,7 +58,7 @@ const WeatherDisplay = ({ city }) => {
 
   return (
     <div >
-      {loading && <p>Loading...</p>}
+      {loading && <p>Loading data...</p>}
       {!loading && weather && (
         <div className="weather-display">
           

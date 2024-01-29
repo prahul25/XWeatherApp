@@ -38,7 +38,7 @@ const WeatherDisplay = ({ city }) => {
     if (city) {
       setLoading(true);
       axios
-        .get(`http://api.weatherapi.com/v1/current.json`, {
+        .get(`https://api.weatherapi.com/v1/current.json`, {
           params: {
             key: "ca1084d4e3e04a8d937143514242801",
             q: city,
